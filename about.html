@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria OS - What is Aria?</title>
+    <meta name="description" content="Learn more about Aria OS, the lightweight and high-performance operating system.">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-hover-color: #45a049;
+            --secondary-color: #f0f0f0;
+            --text-color: #333;
+            --background-gradient-start: #e0f2f1;
+            --background-gradient-end: #a8e6ce;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --animation-duration: 0.8s;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: linear-gradient(to bottom, var(--background-gradient-start), var(--background-gradient-end));
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            width: 80%;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeIn var(--animation-duration) forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: white;
+            background-color: var(--primary-color);
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover-color);
+        }
+
+        /* Centra il contenitore del bottone */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>What is Aria OS?</h1>
+        <p>Aria OS - The Lightweight and High-Performance Operating System</p>
+
+        <h2>Introduction</h2>
+        <p>Aria OS is designed to be the easiest operating system to use. Based on Lubuntu, it provides a fast, smooth, and
+            optimized experience, even on older hardware. Its lightweight nature and intuitive interface make it ideal for
+            those seeking a stable, efficient, and user-friendly system.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><b>Low Resource Consumption:</b> Perfect for older PCs and devices with limited specifications.</li>
+            <li><b>Modern Interface:</b> The LXQt-based interface is customizable and visually appealing.</li>
+            <li><b>Software Compatibility:</b> Compatible with a wide range of Linux software.</li>
+            <li><b>Updated Repositories:</b> Access to constantly updated software for security and functionality.</li>
+        </ul>
+
+        <h2>Security and Stability</h2>
+        <p>Security and stability are core principles of Aria OS. Based on Lubuntu and Ubuntu LTS, it receives regular
+            updates for long-term protection and is optimized for energy efficiency, making it suitable for laptops and
+            low-power devices. Aria OS comes with essential software
+        <p></p>
+        <div class="button-container">
+            <a href="index.html" class="btn btn-primary">Go to Homepage</a> 
+        </div>
+    </main>
+</body>
+
+</html>
