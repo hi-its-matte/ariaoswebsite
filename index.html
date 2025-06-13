@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aria</title>
- 
+
   <style>
     :root {
       --primary-color: #11a5bf;
@@ -15,7 +15,8 @@
       --background-gradient-start: #c4f2f0;
       --background-gradient-end: #0dc2e1;
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      --box-shadow: 0 4px 10px #000000;
+      --main-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+      --hover-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
       --border-radius: 8px;
       --animation-duration: 0.8s;
     }
@@ -36,19 +37,21 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      margin: 0;
+      padding: 20px;
     }
 
     .container {
       background-color: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(10px);
-      box-shadow: var(--box-shadow);
+      box-shadow: var(--main-box-shadow);
       border-radius: var(--border-radius);
       padding: 2rem;
       width: 100%;
       max-width: 1000px;
       text-align: center;
-      opacity: 0;
-      animation: fadeIn var(--animation-duration) forwards;
+      opacity: 1; 
+      animation: none;
     }
 
     @keyframes fadeIn {
@@ -98,35 +101,64 @@
     }
 
     .social-wrapper {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 10px;
       margin-top: 1.5rem;
       border-radius: var(--border-radius);
       overflow: hidden;
-      background: linear-gradient(90deg, #7289da 0%, #09ba4a 100%);
+      box-shadow: none;
+      background-color: transparent;
     }
 
     .social-btn {
-      flex: 1;
-      padding: 0.8rem;
-      font-size: 1rem;
+      padding: 0.6rem;
+      font-size: 0.9rem;
       text-align: center;
       color: white;
       text-decoration: none;
-      background: transparent;
-      transition: background-color 0.3s ease;
+      font-weight: 600;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius);
+      box-shadow: none;
+      transition: box-shadow 0.3s ease;
     }
 
     .social-btn:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: var(--hover-box-shadow);
+      cursor: pointer;
+      z-index: 1;
     }
+
+    .social-btn.discord {
+      background-color: #7289da;
+    }
+
+    .social-btn.github {
+      background-color: #000000;
+    }
+
     .red {
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 1rem;
-            border: 1px solid #f5c6cb;
-            border-radius: var(--border-radius);
-            margin-top: 1rem;
-        }
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 1rem;
+      border: 1px solid #f5c6cb;
+      border-radius: var(--border-radius);
+      margin-top: 1rem;
+    }
+
+    .red p a {
+      text-decoration: none;
+      color: #721c24;
+      font-weight: bold;
+    }
+
+    .red p a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -138,16 +170,17 @@
     <div class="hero-buttons">
       <a href="about.html" class="btn">Learn More</a>
       <a href="download.html" class="btn">Download</a>
+      <a href="https://ariadevs.netlify.app/" class="btn">Aria For Developers</a>
     </div>
 
-    <div class="social-wrapper">
-      <a href="https://discord.com/invite/AeSAHmEuNZ" target="_blank" class="social-btn">Discord</a>
-      <a href="https://whatsapp.com/channel/0029Vb5xnGNCXC3LB4zR8p37" target="_blank" class="social-btn">WhatsApp</a>
+    <h2 style="margin-top: 2rem;">Our Socials</h2>
+      <div class="social-wrapper">
+      <a href="https://discord.com/invite/AeSAHmEuNZ" target="_blank" class="social-btn discord">Discord</a>
+      <a href="https://github.com/hi-its-matte/" target="_blank" class="social-btn github">GitHub</a>
     </div>
-    <div class="red">
-      <p>Are you a dev?</p>
-      <p>we are looking for developers, if you are one, click <a href="https://ariadevs.netlify.app/" target="_blank">here</a></a>.</p>
-    </div>
+    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Follow us to stay tuned on Aria!</p>
+
+    
   </main>
 </body>
 
