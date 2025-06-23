@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -18,16 +17,12 @@
   --nav-bg: rgba(255, 255, 255, 0.95);
   --nav-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* {margin: 0;padding: 0;box-sizing: border-box;}
 body {
   font-family: var(--font-family);
   background: var(--secondary-color);
   color: var(--text-color);
-  padding: 130px 20px 20px 20px; /* lascia spazio per la navbar */
+  padding: 130px 20px 20px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -37,59 +32,47 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--nav-bg);
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   box-shadow: var(--nav-shadow);
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
   align-items: center;
-  width: 80%;
-  max-width: 900px;
-  z-index: 1000;
+  width: 90%; max-width: 900px;
 }
-nav .logo {
-  height: 36px;
-  margin-right: 1rem;
-}
+nav .logo {height: 30px;}
 nav a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--primary-color);
-  white-space: nowrap;
 }
-nav a:hover {
-  color: var(--primary-hover-color);
-}
+nav a:hover {color: var(--primary-hover-color);}
 h1 {
-  font-size: 3rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  user-select: none;
-  text-align: center;
-}
-h2 {
   font-size: 2rem;
   color: var(--primary-color);
-  margin-top: 2rem;
+  text-align: center;
   margin-bottom: 1rem;
-  user-select: none;
+}
+h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
   text-align: center;
 }
 p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   line-height: 1.5;
   text-align: justify;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+.hero-image {
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 .btn {
   display: inline-block;
@@ -98,26 +81,19 @@ p {
   text-decoration: none;
   color: white;
   background-color: var(--primary-color);
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 .btn:hover {
   background-color: var(--primary-hover-color);
 }
-.hero-image {
-  display: block;
-  margin: 0 auto 3rem auto;
-  max-width: 50%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  user-select: none;
+@media (max-width:600px) {
+  h1 {font-size: 1.8rem;}
+  h2 {font-size: 1.4rem;}
+  p {font-size: 0.95rem;}
 }
 </style>
 </head>
-
 <body>
 <nav id="navbar">
   <img src="https://aria-host.netlify.app/img/alogo.png" alt="Aria OS Logo" class="logo" />
@@ -125,39 +101,21 @@ p {
   <a href="download.html">Download</a>
   <a href="https://ariadevs.netlify.app/" target="_blank" rel="noopener">Aria For Developers</a>
 </nav>
-
 <main>
   <h1>What is Aria?</h1>
   <p>Aria - The Lightweight and High-Performance Operating System</p>
-
-  <p>
-    Aria is a startup focused on creating and distributing lightweight, high-quality operating systems designed for everyday use. Our goal is to deliver fast, simple, and accessible computing experiences—especially on older or lower-spec hardware—without sacrificing modern usability or essential features.
-  </p>
-
+  <p>Aria is a startup focused on creating and distributing lightweight, high-quality operating systems designed for everyday use. Our goal is to deliver fast, simple, and accessible computing experiences—especially on older or lower-spec hardware—without sacrificing modern usability or essential features.</p>
   <h2>Which operating systems are available?</h2>
-  <p>
-    We are currently developing several operating systems, each tailored to different types of hardware:
-  </p>
-  <ul style="max-width:800px; margin: 0 auto 1.5rem auto; text-align: left; color: var(--primary-color);">
-    <li><strong>Aria Nebula OS</strong> – Based on Lubuntu<br>Designed for very old PCs, including low RAM and slower processors. Lightweight, responsive interface ideal for basic productivity, web browsing, and educational use.</li>
-    <li><strong>Aria Titan OS</strong> – Based on Debian<br>Optimized for modern computers with more powerful hardware. Full-featured desktop with modern UI, essential apps pre-installed, strong hardware/software compatibility.</li>
-
-<img src="https://aria-host.netlify.app/img/screen.jpg" alt="Screenshot Aria OS" class="hero-image" />
- 
+  <p>We are currently developing several operating systems, each tailored to different types of hardware:</p>
+  <ul style="max-width:800px;margin:0 auto 1.5rem auto;text-align:left;color:var(--primary-color)">
+    <li><strong>Aria Nebula OS</strong> – Based on Lubuntu. Designed for very old PCs, including low RAM and slower processors. Lightweight, responsive interface ideal for basic productivity, web browsing, and educational use.</li>
+    <li><strong>Aria Titan OS</strong> – Based on Debian. Optimized for modern computers with more powerful hardware. Full-featured desktop with modern UI, essential apps pre-installed, strong hardware/software compatibility.</li>
   </ul>
-
+  <img src="https://aria-host.netlify.app/img/screen.jpg" alt="Screenshot Aria OS" class="hero-image" />
   <h2>Why choose Aria?</h2>
-  <p>
-    Systems tailored for a wide range of hardware.<br>
-    Broad compatibility with modern software and devices.<br>
-    Pre-installed apps ready for everyday tasks.<br>
-    Lightweight and fast, even on aging machines.<br>
-    Regular updates with a focus on stability and security.<br>
-    A transparent and growing project built for real users.
-  </p>
-
-  <div class="button-container">
-    <a href="index.html" class="btn btn-primary">Go to Homepage</a>
+  <p>Systems tailored for a wide range of hardware.<br>Broad compatibility with modern software and devices.<br>Pre-installed apps ready for everyday tasks.<br>Lightweight and fast, even on aging machines.<br>Regular updates with a focus on stability and security.<br>A transparent and growing project built for real users.</p>
+  <div style="text-align:center;margin:2rem;">
+    <a href="index.html" class="btn">Go to Homepage</a>
   </div>
 </main>
 </body>

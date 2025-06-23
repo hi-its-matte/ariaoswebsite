@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Aria</title>
- <link rel="icon" href="https://aria-host.netlify.app/img/alogo.png" type="image/png">
+<link rel="icon" href="https://aria-host.netlify.app/img/alogo.png" type="image/png">
 <style>
 :root {
   --primary-color: #242525;
@@ -18,117 +17,87 @@
   --nav-bg: rgba(255, 255, 255, 0.95);
   --nav-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* {margin: 0;padding: 0;box-sizing: border-box;}
 body {
   font-family: var(--font-family);
   background: var(--secondary-color);
   color: var(--text-color);
-  padding: 130px 20px 20px 20px; /* lascia spazio per la navbar */
+  padding: 130px 20px 20px;
 }
 nav {
   position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0; left: 50%; transform: translateX(-50%);
   background-color: var(--nav-bg);
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   box-shadow: var(--nav-shadow);
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
   align-items: center;
-  width: 80%;
-  max-width: 900px;
-  z-index: 1000;
+  width: 90%; max-width: 900px;
 }
-nav .logo {
-  height: 36px;
-  margin-right: 1rem;
-}
+nav .logo {height: 36px;}
 nav a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--primary-color);
-  white-space: nowrap;
 }
-nav a:hover {
-  color: var(--primary-hover-color);
-}
+nav a:hover {color: var(--primary-hover-color);}
 h1 {
-  font-size: 8rem;
+  font-size: 3.5rem;
   color: var(--primary-color);
-  margin: 120px 0 1rem 0;
+  margin: 60px 0 1rem 0;
   text-align: center;
-  user-select: none;
 }
 p1 {
-  font-size: 3.6rem;
+  font-size: 1.5rem;
   text-align: center;
   display: block;
   margin-bottom: 2rem;
-  user-select: none;
-  color: var(--text-color);
 }
 .hero-image {
   display: block;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 2rem auto;
   max-width: 50%;
   height: auto;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  user-select: none;
 }
 .social-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 10px;
-  margin: 1.5rem auto;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  background-color: transparent;
-  width: 300px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .social-btn {
-  padding: 0.6rem;
-  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
   text-align: center;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: var(--border-radius);
   transition: background-color 0.3s ease;
 }
-.social-btn.discord {
-  background-color: #7289da;
-}
-.social-btn.discord:hover {
-  background-color: #5b6eae;
-}
-.social-btn.github {
-  background-color: #000;
-}
-.social-btn.github:hover {
-  background-color: #333;
-}
+.social-btn.discord {background-color: #7289da;}
+.social-btn.discord:hover {background-color: #5b6eae;}
+.social-btn.github {background-color: #000;}
+.social-btn.github:hover {background-color: #333;}
 p.social-note {
   font-size: 0.9rem;
   color: #666;
   margin-top: 1rem;
   text-align: center;
-  user-select: none;
+}
+@media (max-width:600px) {
+  h1 { font-size: 2.5rem; }
+  p1 { font-size: 1.25rem; }
 }
 </style>
 </head>
-
 <body>
 <nav id="navbar">
   <img src="https://aria-host.netlify.app/img/alogo.png" alt="Aria OS Logo" class="logo" />
@@ -136,12 +105,9 @@ p.social-note {
   <a href="download.html">Download</a>
   <a href="https://ariadevs.netlify.app/" target="_blank" rel="noopener">Aria For Developers</a>
 </nav>
-
 <h1>Welcome to Aria Website</h1>
 <p1>Experience a new way to use your computer.</p1>
-
 <img src="https://aria-host.netlify.app/img/screen.jpg" alt="Screenshot Aria OS" class="hero-image" />
-
 <div class="social-wrapper">
   <a href="https://discord.com/invite/AeSAHmEuNZ" target="_blank" class="social-btn discord">Discord</a>
   <a href="https://github.com/hi-its-matte/" target="_blank" class="social-btn github">GitHub</a>
