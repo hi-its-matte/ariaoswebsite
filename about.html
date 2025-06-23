@@ -1,196 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aria - What is Aria?</title>
-
-    <style>
-        :root {
-            --primary-color: #11a5bf;
-            --primary-hover-color: #0dc2e1;
-            --secondary-color: #f0f0f0;
-            --text-color: #333;
-            --background-gradient-start: #c4f2f0;
-            --background-gradient-end: #0dc2e1;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-            --border-radius: 8px;
-            --animation-duration: 0.8s;
-        }
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background: linear-gradient(to bottom, var(--background-gradient-start), var(--background-gradient-end));
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            background-color: #ffffffcc;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--box-shadow);
-            border-radius: var(--border-radius);
-            padding: 1rem;
-            width: 110%;
-            max-width: 160vh;
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn var(--animation-duration) forwards;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        ul {
-            list-style: disc;
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            color: white;
-            background-color: var(--primary-color);
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-hover-color);
-        }
-
-        /* Centra il contenitore del bottone */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .red {
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 1rem;
-            border: 1px solid #f5c6cb;
-            border-radius: var(--border-radius);
-            margin-top: 1rem;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aria - What is Aria?</title>
+<link rel="icon" href="https://aria-host.netlify.app/img/alogo.png" type="image/png">
+<style>
+:root {
+  --primary-color: #242525;
+  --background-color: #333;
+  --primary-hover-color: #99cde6;
+  --secondary-color: #f0f0f0;
+  --text-color: #333;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius: 8px;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family);
+  background: var(--secondary-color);
+  color: var(--text-color);
+  padding: 130px 20px 20px 20px; /* lascia spazio per la navbar */
+  max-width: 900px;
+  margin: 0 auto;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--nav-bg);
+  padding: 1.5rem 3rem;
+  border-radius: 50px;
+  box-shadow: var(--nav-shadow);
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 900px;
+  z-index: 1000;
+}
+nav .logo {
+  height: 36px;
+  margin-right: 1rem;
+}
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+nav a:hover {
+  color: var(--primary-hover-color);
+}
+h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  user-select: none;
+  text-align: center;
+}
+h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  user-select: none;
+  text-align: center;
+}
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  text-align: justify;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-color);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.btn:hover {
+  background-color: var(--primary-hover-color);
+}
+.hero-image {
+  display: block;
+  margin: 0 auto 3rem auto;
+  max-width: 50%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  user-select: none;
+}
+</style>
 </head>
 
 <body>
-    <main class="container">
-        <h1>What is Aria?</h1>
-        <p>Aria - The Lightweight and High-Performance Operating System</p>
+<nav id="navbar">
+  <img src="https://aria-host.netlify.app/img/alogo.png" alt="Aria OS Logo" class="logo" />
+  <a href="about.html">Learn More</a>
+  <a href="download.html">Download</a>
+  <a href="https://ariadevs.netlify.app/" target="_blank" rel="noopener">Aria For Developers</a>
+</nav>
 
-        <h1>What is Aria?</h1>
-        <p>
-            Aria is a startup focused on creating and distributing lightweight, high-quality operating systems designed for everyday use. Our goal is to deliver fast, simple, and accessible computing experiences—especially on older or lower-spec hardware—without sacrificing modern usability or essential features.
-        </p>
-        <h1>Which operating systems are available?</h1>
-        <p>
-            We are currently developing several operating systems, each tailored to different types of hardware:
+<main>
+  <h1>What is Aria?</h1>
+  <p>Aria - The Lightweight and High-Performance Operating System</p>
 
-            Aria Nebula OS
-            Based on Lubuntu
+  <p>
+    Aria is a startup focused on creating and distributing lightweight, high-quality operating systems designed for everyday use. Our goal is to deliver fast, simple, and accessible computing experiences—especially on older or lower-spec hardware—without sacrificing modern usability or essential features.
+  </p>
 
-            Designed for very old PCs, including systems with low RAM and slower processors
+  <h2>Which operating systems are available?</h2>
+  <p>
+    We are currently developing several operating systems, each tailored to different types of hardware:
+  </p>
+  <ul style="max-width:800px; margin: 0 auto 1.5rem auto; text-align: left; color: var(--primary-color);">
+    <li><strong>Aria Nebula OS</strong> – Based on Lubuntu<br>Designed for very old PCs, including low RAM and slower processors. Lightweight, responsive interface ideal for basic productivity, web browsing, and educational use.</li>
+    <li><strong>Aria Titan OS</strong> – Based on Debian<br>Optimized for modern computers with more powerful hardware. Full-featured desktop with modern UI, essential apps pre-installed, strong hardware/software compatibility.</li>
 
-            Lightweight, responsive interface
+<img src="https://aria-host.netlify.app/img/screen.jpg" alt="Screenshot Aria OS" class="hero-image" />
+ 
+  </ul>
 
-            Ideal for basic productivity, web browsing, and educational use
+  <h2>Why choose Aria?</h2>
+  <p>
+    Systems tailored for a wide range of hardware.<br>
+    Broad compatibility with modern software and devices.<br>
+    Pre-installed apps ready for everyday tasks.<br>
+    Lightweight and fast, even on aging machines.<br>
+    Regular updates with a focus on stability and security.<br>
+    A transparent and growing project built for real users.
+  </p>
 
-            Aria Titan OS
-            Based on Ubuntu
-
-            Optimized for modern computers with more powerful hardware
-
-            Full-featured desktop experience with a modern UI
-
-            Pre-installed with essential apps and tools for daily and professional use
-
-            Strong hardware and software compatibility
-
-            Aria Titan OS Lite
-            Based on Zorin OS Lite
-
-            Designed for recent but not high-end PCs
-
-            Clean, user-friendly interface with low resource consumption
-
-            Great balance between performance and visual design
-        </p>
-        <h1>Why choose Aria?</h1>
-        <p>
-            Systems tailored for a wide range of hardware
-
-            Broad compatibility with modern software and devices
-
-            Pre-installed apps ready for everyday tasks
-
-            Lightweight and fast, even on aging machines
-
-            Regular updates with a focus on stability and security
-
-            A transparent and growing project built for real users
-        </p>
-        <div class="button-container">
-            <a href="index.html" class="btn btn-primary">Go to Homepage</a>
-        </div>
-    </main>
+  <div class="button-container">
+    <a href="index.html" class="btn btn-primary">Go to Homepage</a>
+  </div>
+</main>
 </body>
-
 </html>
