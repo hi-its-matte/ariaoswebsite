@@ -2,153 +2,365 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Aria - Download</title>
-  <meta http-equiv="refresh" content="0; url=ariados.html">
-
+<meta na]me="viewport" content="width=device-width,initial-scale=1" />
+<title>Aria</title>
+<link rel="icon" href="alogo.png" type="image/png">
 <style>
 :root {
   --primary-color: #242525;
+  --background-color: #f0f0f0;
   --primary-hover-color: #99cde6;
-  --secondary-color: #f0f0f0;
   --text-color: #333;
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --border-radius: 8px;
   --nav-bg: rgba(255, 255, 255, 0.95);
   --nav-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-* {margin:0;padding:0;box-sizing:border-box;}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --nav-bg: rgba(44, 44, 44, 0.95);
+    --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-family);
-  background: var(--secondary-color);
+  background: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-  padding:130px 20px 20px;
+  padding: 130px 20px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 nav {
   position: fixed;
-  top:0;
-  left:50%;
+  top: 0;
+  left: 50%;
   transform: translateX(-50%);
   background-color: var(--nav-bg);
-  padding:1rem 2rem;
-  border-radius:50px;
-  box-shadow:var(--nav-shadow);
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:1rem;
-  align-items:center;
-  width:90%;max-width:900px;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: var(--nav-shadow);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  width: 90%;
+  max-width: 900px;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
-nav .logo {height:30px;}
+
+nav .logo {
+  height: 30px;
+}
+
 nav a {
-  text-decoration:none;
-  font-weight:600;
-  font-size:1rem;
-  color:var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
-nav a:hover {color:var(--primary-hover-color)}
+
+nav a:hover {
+  color: var(--primary-hover-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  nav a {
+    color: var(--text-color);
+  }
+}
+
 .container {
-  background-color: rgba(255,255,255,0.85);
-  backdrop-filter:blur(10px);
-  box-shadow:0 4px 10px rgba(0,0,0,0.2);
-  border-radius:var(--border-radius);
-  padding:2rem;
-  text-align:center;
-  max-width:800px;
-  margin:0 auto;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0);
 }
+
 h1 {
-  font-size:2rem;
-  color:var(--primary-color);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
-p {
-  font-size:1rem;
-  margin-bottom:1.5rem;
+
+@media (prefers-color-scheme: dark) {
+  h1 {
+    color: var(--text-color);
+  }
 }
-.download-info {
-  text-align:left;
-  margin-top:2rem;
+
+.status-banner {
+  background: linear-gradient(135deg, rgba(153, 205, 230, 0.2), rgba(36, 37, 37, 0.2));
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+  border-left: 4px solid var(--primary-hover-color);
 }
-.download-info h2 {
-  font-size:1.5rem;
-  color:var(--primary-color);
+
+.status-banner h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
-.download-info ul {
-  list-style:disc;
-  padding-left:1.5rem;
+
+@media (prefers-color-scheme: dark) {
+  .status-banner h2 {
+    color: var(--text-color);
+  }
 }
-.download-info li {
-  margin-bottom:0.5rem;
+
+.status-banner p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
+
+.development-info {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.development-info h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .development-info h3 {
+    color: var(--text-color);
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .info-card h4 {
+    color: var(--text-color);
+  }
+}
+
+.info-card p {
+  font-size: 1rem;
+  margin: 0;
+}
+
 .btn {
-  display:inline-block;
-  padding:1rem 2rem;
-  border-radius:var(--border-radius);
-  text-decoration:none;
-  color:white;
-  background-color:var(--primary-color);
-  font-size:1rem;
-  font-weight:600;
-  margin:0.5rem;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .btn:hover {
-  background-color:var(--primary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-.red {
-  background-color:#f8d7da;
-  color:#721c24;
-  padding:1rem;
-  border:1px solid #f5c6cb;
-  border-radius:var(--border-radius);
-  margin-top:1rem;
+
+.btn-disabled {
+  background: linear-gradient(135deg, #666, #888);
+  cursor: not-allowed;
+  opacity: 0.7;
 }
-@media (max-width:600px) {
-  h1 {font-size:1.5rem;}
-  p, .btn {font-size:0.95rem;}
+
+.btn-disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.progress-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+}
+
+.progress-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .progress-section h3 {
+    color: var(--text-color);
+  }
+}
+
+.progress-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.progress-item span {
+  font-weight: 600;
+}
+
+.progress-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-in-progress {
+  background: rgba(255, 165, 0, 0.2);
+  color: #ff8c00;
+}
+
+.status-planned {
+  background: rgba(128, 128, 128, 0.2);
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 100px 15px 15px;
+  }
+  
+  .container {
+    padding: 2rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  nav {
+    width: 95%;
+    padding: 0.8rem 1rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 </style>
 </head>
 <body>
 <nav id="navbar">
-  <img src="https://mattehost.netlify.app/img/alogo.png" alt="Aria OS Logo" class="logo" />
-  <a href="about.html">Learn More</a>
+  <img src="alogo.png" alt="Aria OS Logo" class="logo" />
   <a href="index.html">Homepage</a>
-    <a href="ariados.html">AriaDOS</a>
+  <a href="about.html">Learn More</a>
+  <a href="us.html">About Us</a>
   <a href="https://ariadevs.netlify.app/" target="_blank" rel="noopener">Aria For Developers</a>
 </nav>
-<main class="container">
-  <h1>Download Aria</h1>
-  <p>Stay tuned for the first release of Aria! Here's a sneak peek:</p>
-  <div class="download-info">
-    <h2>Details:</h2>
-    <ul>
-      <li>Version: 1.0 (codename: "Nebula")</li>
-      <li>Based on: Lubuntu 24.04 LTS</li>
-      <li>Desktop Environment: LXQt</li>
-      <li>Architecture: x64</li>
-    </ul>
+<main div class="container">
+
+  <h1>Download Aria GlowOS</h1>
+  
+  <div class="status-banner">
+    <h2>🚧 Development in Progress</h2>
+    <p>Aria GlowOS is currently under intensive development. We are creating a completely new operating system with custom bootloader and kernel.</p>
   </div>
-  <div style="margin-top:2rem;">
-    <a href="#" id="warningButton1" class="btn">Download Aria NebulaOS</a>
-    <a href="#" id="warningButton2" class="btn">Download Aria TitanOS</a>
-    <a href="index.html" class="btn">Go to Homepage</a>
+
+  <div class="development-info">
+    <h3>📋 Project Information</h3>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>🎯 Architecture</h4>
+        <p>Completely new operating system, written from scratch</p>
+      </div>
+      <div class="info-card">
+        <h4>💻 Target</h4>
+        <p>x64 (64-bit) architecture</p>
+      </div>
+      <div class="info-card">
+        <h4>🔧 Bootloader</h4>
+        <p>Custom bootloader developed internally</p>
+      </div>
+      <div class="info-card">
+        <h4>🧠 Kernel</h4>
+        <p>Proprietary kernel optimized for performance</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-section">
+    <h3>📊 Development Status</h3>
+    <div class="progress-item">
+      <span>🔧 Bootloader</span>
+      <span class="progress-status status-in-progress">In Progress</span>
+    </div>
+    <div class="progress-item">
+      <span>🧠 Base Kernel</span>
+      <span class="progress-status status-in-progress">In Progress</span>
+    </div>
+    <div class="progress-item">
+      <span>💾 File System</span>
+      <span class="progress-status status-planned">Planned</span>
+    </div>
+    <div class="progress-item">
+      <span>💻 User Interface</span>
+      <span class="progress-status status-planned">Planned</span>
+    </div>
+  </div>
+
+  <div>
+    <a href="#" class="btn btn-disabled" aria-disabled="true" tabindex="-1">Download Coming Soon</a>
   </div>
 </main>
-<script>
-  document.getElementById("warningButton1").addEventListener("click", e => {
-    e.preventDefault();
-    alert("⚠️ Aria NebulaOS is not available yet. Try again later.");
-  });
-  document.getElementById("warningButton2").addEventListener("click", e => {
-    e.preventDefault();
-    alert("⚠️ Aria TitanOS is not available yet. Try again later.");
-  });
-</script>
 </body>
 </html>
-
-
-
-

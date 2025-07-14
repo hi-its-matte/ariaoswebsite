@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Aria</title>
+<title>About Us - Aria</title>
 <link rel="icon" href="alogo.png" type="image/png">
 <style>
 :root {
@@ -17,6 +17,7 @@
   --border-radius: 8px;
   --nav-bg: rgba(255, 255, 255, 0.95);
   --nav-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.95);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +27,7 @@
     --text-color: #f0f0f0;
     --nav-bg: rgba(44, 44, 44, 0.95);
     --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --card-bg: rgba(44, 44, 44, 0.95);
   }
 }
 
@@ -86,9 +88,9 @@ nav a:hover {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: var(--primary-color);
-  margin: 60px 0 1rem 0;
+  margin: 60px 0 2rem 0;
   text-align: center;
   font-weight: 700;
 }
@@ -100,106 +102,90 @@ h1 {
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-align: center;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: var(--text-color);
   opacity: 0.8;
 }
 
-.hero-image {
-  display: block;
-  margin: 0 auto 2rem auto;
-  max-width: min(600px, 70%);
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero-image:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-}
-
-.social-wrapper {
+.cards-container {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  justify-content: center;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.social-btn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.social-btn.discord {
-  background: linear-gradient(135deg, #7289da, #5b6eae);
-}
-
-.social-btn.discord:hover {
-  background: linear-gradient(135deg, #5b6eae, #4a5a8a);
-}
-
-.social-btn.github {
-  background: linear-gradient(135deg, #333, #000);
-}
-
-.social-btn.github:hover {
-  background: linear-gradient(135deg, #555, #333);
-}
-
-.social-note {
-  font-size: 0.9rem;
-  color: var(--text-color);
-  opacity: 0.7;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.coming-soon {
-  text-align: center;
-  margin: 3rem 0;
+.us-cnt {
+  flex: 1 1 calc(50% - 30px);
+  max-width: calc(50% - 30px);
+  min-width: 280px;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.coming-soon h2 {
+.us-cnt:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.us-cnt img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.us-cnt:hover img {
+  transform: scale(1.05);
+}
+
+.us-cnt h2 {
   font-size: 1.8rem;
+  margin-bottom: 0.5rem;
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 @media (prefers-color-scheme: dark) {
-  .coming-soon h2 {
+  .us-cnt h2 {
     color: var(--text-color);
   }
 }
 
-.coming-soon p {
+.us-cnt p {
   font-size: 1.1rem;
+  color: var(--text-color);
+  font-weight: 500;
   opacity: 0.8;
 }
 
-@media (max-width: 600px) {
+.us-cnt a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.email-hint {
+  font-size: 0.9rem;
+  color: var(--primary-hover-color);
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
   body {
     padding: 100px 15px 15px;
   }
@@ -209,7 +195,7 @@ h1 {
   }
   
   .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
   
   nav {
@@ -221,44 +207,51 @@ h1 {
     font-size: 0.9rem;
   }
   
-  .hero-image {
-    max-width: 90%;
+  .us-cnt {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: unset;
+  }
+  
+  .cards-container {
+    gap: 20px;
   }
 }
 </style>
 </head>
 <body>
+
 <nav id="navbar">
   <img src="alogo.png" alt="Aria OS Logo" class="logo" />
+  <a href="index.html">Homepage</a>
   <a href="about.html">Learn More</a>
   <a href="download.html">Download</a>
-  <a href="us.html">About Us</a>
   <a href="https://ariadevs.netlify.app/" target="_blank" rel="noopener">Aria For Developers</a>
 </nav>
 
-
 <main>
-  <h1>This Is Aria GlowOS</h1>
-  <p class="subtitle">A completely new OS, written from scratch.</p>
+  <h1>Meet The Team</h1>
+  <p class="subtitle">The minds behind Aria</p>
   
-  <img src="screen.jpg" alt="Screenshot Aria OS" class="hero-image" />
-  
-  <div class="coming-soon">
-    <h2>🚀 Development in Progress</h2>
-    <p>We are creating <strong>GlowOS</strong> — a revolutionary operating system with a fully custom bootloader and kernel. Get ready to experience computing like never before.</p>
-</div>
+  <div class="cards-container">
+    <div class="us-cnt">
+      <a href="mailto:aria.matteo.abate@outlook.com">
+        <img src="MLOGO.jpg" alt="Matteo">
+        <h2>Matteo</h2>
+        <p>Developer & Owner</p>
+        <p class="email-hint">Click to contact</p>
+      </a>
+    </div>
 
-<div class="social-wrapper">
-  <a href="https://discord.com/invite/AeSAHmEuNZ" target="_blank" class="social-btn discord" style="display: inline-flex; align-items: center; gap: 6px;">
-    <i class="fab fa-discord" style="font-size: 1.3em;"></i> Discord
-  </a>
-  <a href="https://github.com/hi-its-matte/" target="_blank" class="social-btn github" style="display: inline-flex; align-items: center; gap: 6px; margin-left: 15px;">
-    <i class="fab fa-github" style="font-size: 1.3em;"></i> GitHub
-  </a>
-</div>
-
-<p class="social-note">Follow us to stay updated on Aria’s development!</p>
-
+    <div class="us-cnt">
+      <a href="mailto:aria.niccolò.masi@gmail.com">
+        <img src="N.jpg" alt="Niccolò">
+        <h2>Niccolò</h2>
+        <p>Designer & Owner</p>
+        <p class="email-hint">Click to contact</p>
+      </a>
+    </div>
+  </div>
 </main>
 </body>
 </html>

@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Aria - What is Aria?</title>
-<link rel="icon" href="https://mattehost.netlify.app/img/screen" type="image/png">
-  <meta http-equiv="refresh" content="0; url=ariados.html">
-
+<title>Aria</title>
+<link rel="icon" href="alogo.png" type="image/png">
 <style>
 :root {
   --primary-color: #242525;
-  --background-color: #333;
+  --background-color: #f0f0f0;
   --primary-hover-color: #99cde6;
   --secondary-color: #f0f0f0;
   --text-color: #333;
@@ -19,15 +17,33 @@
   --nav-bg: rgba(255, 255, 255, 0.95);
   --nav-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-* {margin: 0;padding: 0;box-sizing: border-box;}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1e1e1e;
+    --secondary-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --nav-bg: rgba(44, 44, 44, 0.95);
+    --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-family);
-  background: var(--secondary-color);
+  background: var(--background-color);
   color: var(--text-color);
   padding: 130px 20px 20px;
   max-width: 900px;
   margin: 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 nav {
   position: fixed;
   top: 0;
@@ -42,83 +58,254 @@ nav {
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  width: 90%; max-width: 900px;
+  width: 90%;
+  max-width: 900px;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
-nav .logo {height: 30px;}
+
+nav .logo {
+  height: 30px;
+}
+
 nav a {
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
   color: var(--primary-color);
+  transition: color 0.3s ease;
 }
-nav a:hover {color: var(--primary-hover-color);}
+
+nav a:hover {
+  color: var(--primary-hover-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  nav a {
+    color: var(--text-color);
+  }
+}
+
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--primary-color);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
+
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--primary-color);
   text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
+
+@media (prefers-color-scheme: dark) {
+  h1, h2 {
+    color: var(--text-color);
+  }
+}
+
 p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
   text-align: justify;
 }
+
 .hero-image {
   display: block;
   margin: 2rem auto;
   max-width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.hero-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feature-card h3 {
+    color: var(--text-color);
+  }
+}
+
+.feature-card p {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(153, 205, 230, 0.1), rgba(36, 37, 37, 0.1));
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+  border-left: 4px solid var(--primary-hover-color);
+  backdrop-filter: blur(10px);
+}
+
+.highlight-box h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .highlight-box h3 {
+    color: var(--text-color);
+  }
+}
+
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   text-decoration: none;
   color: white;
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
   font-size: 1rem;
   font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .btn:hover {
-  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-@media (max-width:600px) {
-  h1 {font-size: 1.8rem;}
-  h2 {font-size: 1.4rem;}
-  p {font-size: 0.95rem;}
+
+.btn-center {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 100px 15px 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  nav {
+    width: 95%;
+    padding: 0.8rem 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+  }
 }
 </style>
 </head>
 <body>
 <nav id="navbar">
-  <img src="https://mattehost.netlify.app/img/alogo.png" alt="Aria OS Logo" class="logo" />
+  <img src="alogo.png" alt="Aria OS Logo" class="logo" />
   <a href="index.html">Homepage</a>
   <a href="download.html">Download</a>
-    <a href="ariados.html">AriaDOS</a>
+  <a href="us.html">About Us</a>
   <a href="https://ariadevs.netlify.app/" target="_blank" rel="noopener">Aria For Developers</a>
 </nav>
+
 <main>
-  <h1>What is Aria?</h1>
-  <p>Aria - The Lightweight and High-Performance Operating System</p>
-  <p>Aria is a startup focused on creating and distributing lightweight, high-quality operating systems designed for everyday use. Our goal is to deliver fast, simple, and accessible computing experiences—especially on older or lower-spec hardware—without sacrificing modern usability or essential features.</p>
-  <h2>Which operating systems are available?</h2>
-  <p>We are currently developing several operating systems, each tailored to different types of hardware:</p>
-  <ul style="max-width:800px;margin:0 auto 1.5rem auto;text-align:left;color:var(--primary-color)">
-    <li><strong>Aria Nebula OS</strong> – Based on Lubuntu. Designed for very old PCs, including low RAM and slower processors. Lightweight, responsive interface ideal for basic productivity, web browsing, and educational use.</li>
-    <li><strong>Aria Titan OS</strong> – Based on Debian. Optimized for modern computers with more powerful hardware. Full-featured desktop with modern UI, essential apps pre-installed, strong hardware/software compatibility.</li>
-  </ul>
-  <img src="https://mattehost.netlify.app/img/screen.jpg" alt="Screenshot Aria OS" class="hero-image" />
-  <h2>Why choose Aria?</h2>
-  <p>Systems tailored for a wide range of hardware.<br>Broad compatibility with modern software and devices.<br>Pre-installed apps ready for everyday tasks.<br>Lightweight and fast, even on aging machines.<br>Regular updates with a focus on stability and security.<br>A transparent and growing project built for real users.</p>
-  <div style="text-align:center;margin:2rem;">
-    <a href="index.html" class="btn">Go to Homepage</a>
+  <section id="about">
+    <h1>This is Aria GlowOS</h1>
+    <img src="screen.jpg" alt="Aria OS Screenshot" class="hero-image" />
+    
+    <div class="highlight-box">
+      <h3>🚀 A completely new operating system</h3>
+      <p>Aria GlowOS is a modern operating system designed entirely from scratch, with a custom bootloader and proprietary kernel. It is not based on existing distributions but is an innovative solution aimed at providing speed, reliability, and simplicity.</p>
+    </div>
+
+    <h2>Why choose Aria?</h2>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>🎯 Built from scratch</h3>
+        <p>Fully customized bootloader and kernel for optimal performance and complete system control.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>⚡ Extreme speed</h3>
+        <p>Optimized to run smoothly even on hardware with limited resources, always guaranteeing excellent performance.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>🛡️ Advanced security</h3>
+        <p>Secure by-design architecture with regular updates focused on stability and protection.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>🔧 Total customization</h3>
+        <p>Intuitive interface that adapts to your workflow, with advanced customization options.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>🌐 Extensive compatibility</h3>
+        <p>Wide compatibility with modern software and peripherals, keeping you productive at all times.</p>
+      </div>
+      
+      <div class="feature-card">
+        <h3>🤝 Community-driven</h3>
+        <p>Transparent, community-driven project where your feedback shapes the future of Aria GlowOS.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h3>💡 Project philosophy</h3>
+      <p>We believe an operating system should be powerful yet simple, secure yet flexible. Aria GlowOS represents a new vision of computing, where every component is designed to offer the best possible user experience.</p>
+    </div>
+  </section>
+
+  <div class="btn-center">
+    <a href="index.html" class="btn">Back to Homepage</a>
   </div>
 </main>
 </body>
