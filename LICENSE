@@ -1,47 +1,57 @@
-Team Aria Website License (TAWL) v1.0  
+Team Aria Website License (TAWL) v1.1
 Copyright (c) 2025 Matteo Abate and Team Aria
 
-Permission is hereby granted, free of charge, to any person obtaining a copy  
-of this website and its associated files (the "Website"), to use, modify,  
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this website and its associated files (the "Website"), to use, modify,
 and distribute the Website, subject to the following conditions:
 
-1. Attribution  
-   a. All versions of the Website, whether original or modified, must include  
-      clear and visible attribution on every public-facing page to:  
-      - Matteo Abate  
-      - Team Aria  
+1. Attribution
+a. All versions of the Website, original or modified, must include
+clear and visible attribution on every public-facing page to:
+- Matteo Abate
+- Team Aria
 
-   b. These credits must be:  
-      - Clearly legible  
-      - Not hidden, obfuscated, or minimized  
-      - Present regardless of the device or screen size  
+b. These credits must be:
+- Clearly legible
+- Not hidden, obfuscated, or minimized
+- Present regardless of device or screen size
 
-2. Preservation of Attribution  
-   a. If the Website is modified and redistributed (in whole or in part), the  
-      credits to Matteo Abate and Team Aria must be preserved in their original  
-      form on all pages.  
-   b. Additional credits may be added, but original credits must not be  
-      removed, altered, or replaced.  
+2. Preservation of Attribution
+a. If the Website is modified and redistributed (in whole or in part),
+the credits to Matteo Abate and Team Aria must be preserved
+in their original form on all pages.
+b. Additional credits may be added, but the original ones must not be
+removed, altered, or replaced.
 
-3. No Removal of Credits  
-   a. Under no circumstance may any person or organization remove, hide,  
-      obscure, or replace the names of Matteo Abate and Team Aria from any  
-      version of the Website.  
+3. No Removal of Credits
+a. Under no circumstance may any person or organization remove, hide,
+obscure, or replace the names of Matteo Abate and Team Aria
+from any version of the Website.
 
-4. Disclaimer of Warranty  
-   The Website is provided "as is", without warranty of any kind, express or  
-   implied, including but not limited to the warranties of merchantability,  
-   fitness for a particular purpose and noninfringement. In no event shall the  
-   authors or copyright holders be liable for any claim, damages or other  
-   liability, whether in an action of contract, tort or otherwise, arising from,  
-   out of or in connection with the Website or the use or other dealings in the Website.  
+4. Copyleft Clause
+a. This license is copyleft: any modified or derivative work
+based on the Website must be released under the same terms
+as this license (TAWL v1.1).
+b. You may not apply additional restrictions or proprietary licenses
+to modified or redistributed versions.
 
-5. Optional Notices  
-   It is recommended (but not mandatory) that modified versions include a note  
-   indicating the name or organization responsible for the modification.  
+5. Minimum Modification Requirement for Redistribution
+a. Redistribution of the Website, in whole or in part, is permitted
+only if the person redistributing has made and documented
+at least 15 meaningful line changes to the content (code, markup, or text).
+b. Superficial or cosmetic changes (such as whitespace, comments, or reordering)
+do not count toward this requirement.
+c. Redistribution without meeting this condition is prohibited.
 
----
+6. Disclaimer of Warranty
+The Website is provided "as is", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose, and noninfringement. In no event shall the
+authors or copyright holders be liable for any claim, damages, or other
+liability, whether in an action of contract, tort, or otherwise, arising from,
+out of, or in connection with the Website or the use or other dealings in the Website.
 
-This license may be reproduced and included with all copies or substantial  
-portions of the Website. For questions or permission beyond this license,  
+This license may be reproduced and included with all copies or substantial
+portions of the Website. For questions or permissions beyond this license,
 please contact: matte.abate@outlook.it
+
